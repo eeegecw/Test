@@ -47,7 +47,9 @@
       width: 120px;
       height: 300px;
       transform-origin: 50% 0;
-      animation: swing 3.8s ease-in-out infinite alternate;
+      translate: 0 -340px;
+      transition: translate 1.35s cubic-bezier(.22,1.25,.36,1);
+      animation: swing 3.8s ease-in-out 1.35s infinite alternate;
       pointer-events: auto;
       cursor: pointer;
       border: 0;
@@ -55,6 +57,7 @@
       background: transparent;
       -webkit-tap-highlight-color: transparent;
     }
+    .lamp.dropped { translate: 0 0; }
     .wire {
       position: absolute;
       top: 0;
@@ -280,6 +283,10 @@
 
   <script>
     const lamp = document.getElementById('lamp');
+    // Let the bulb fall into frame before its pendulum swing begins.
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => lamp.classList.add('dropped'));
+    });
     const switchOn = () => {
       document.body.classList.add('lit');
       lamp.setAttribute('aria-label', 'AEEE homepage revealed');
