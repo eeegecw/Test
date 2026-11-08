@@ -179,14 +179,15 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
     }
     header {
-      width: min(1160px, calc(100% - 56px));
+      width: min(1500px, calc(100% - 80px));
       margin: auto;
       padding: 28px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .brand { display:flex; align-items:center; gap:12px; }
+    .brand { display:flex; align-items:center; gap:16px; }
+    .brand-logo { width:72px; height:62px; object-fit:contain; display:block; }
     .brand-mark {
       width: 42px; height: 42px;
       border: 1px solid #c7f36b77;
@@ -201,13 +202,14 @@
     .brand-copy span { color:#9da69a; font-size:9px; letter-spacing:.18em; text-transform:uppercase; }
     .top-note { color:#abb3a8; font-size:11px; letter-spacing:.18em; text-transform:uppercase; }
     main {
-      width: min(1160px, calc(100% - 56px));
-      min-height: calc(100vh - 100px);
+      width: min(1500px, calc(100% - 80px));
+      min-height: calc(100svh - 112px);
       margin: auto;
       display:flex;
       flex-direction:column;
       justify-content:center;
-      padding: 58px 0 110px;
+      align-items:flex-start;
+      padding: 20px 0 86px;
     }
     .eyebrow {
       display:flex; align-items:center; gap:12px;
@@ -217,14 +219,14 @@
     }
     .eyebrow:before { content:''; width:34px; height:1px; background:var(--lime); }
     h1 {
-      max-width: 900px;
+      max-width: 1050px;
       margin:0;
-      font:600 clamp(50px,8.5vw,112px)/.98 'Space Grotesk',sans-serif;
+      font:600 clamp(54px,7.2vw,108px)/.94 'Space Grotesk',sans-serif;
       letter-spacing:-.075em;
     }
     h1 span { color:var(--lime); }
     .intro {
-      max-width:560px;
+      max-width:680px;
       color:#b5bdb1;
       font-size:clamp(15px,1.6vw,18px);
       line-height:1.8;
@@ -244,7 +246,7 @@
     .secondary { color:#9ca69a; font-size:12px; letter-spacing:.08em; }
     .bottom-line {
       position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
-      width:min(1160px,calc(100% - 56px));
+      width:min(1500px,calc(100% - 80px));
       display:flex; justify-content:space-between; gap:20px;
       color:#697267; font-size:10px; letter-spacing:.15em; text-transform:uppercase;
     }
@@ -260,8 +262,9 @@
     @media (max-width:600px) {
       header,main { width:calc(100% - 36px); }
       header { padding:20px 0; }
+      .brand-logo { width:54px; height:48px; }
       .top-note { display:none; }
-      main { min-height:calc(100svh - 85px); padding:60px 0 120px; }
+      main { min-height:calc(100svh - 90px); padding:38px 0 100px; }
       .lamp { height:260px; }
       .wire { height:170px; }
       .holder { top:167px; }
@@ -269,6 +272,9 @@
       .bulb:before { top:29px; height:67px; }
       .lamp-label { top:280px; }
       .bottom-line { width:calc(100% - 36px); font-size:8px; bottom:18px; }
+      h1 { font-size:clamp(48px,12vw,68px); line-height:.98; }
+      .eyebrow { font-size:9px; letter-spacing:.16em; margin-bottom:18px; }
+      .intro { font-size:15px; line-height:1.7; }
       .intro { margin:24px 0 28px; }
     }
     @media (prefers-reduced-motion: reduce) {
